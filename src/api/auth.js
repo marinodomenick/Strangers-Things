@@ -35,7 +35,7 @@ export const loginUser = async (username, password) => {
   const result = await response.json();
   return result;
 };
-//fetchme
+// Me Page
 export const fetchMe = async (token) => {
   const response = await fetch(`${url}/users/me`, {
     headers: {
@@ -46,5 +46,8 @@ export const fetchMe = async (token) => {
   const result = await response.json();
   return result;
 };
+
+
+
 
 

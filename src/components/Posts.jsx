@@ -1,20 +1,35 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { fetchPosts } from "../api/apiposts";
 
-// function Posts() {
-//   return <div></div>;
-// }
+function Posts() {
+  const [posts, setPosts] = useState([]);
 
-// export default Posts;
+  useEffect(() => {
+    const getAllPost = async () => {
+      const result = await fetchPosts();
+      setPosts(result.data.posts);
+    };
+    getAllPost();
+  }, []);
 
-const Posts = () => {
-  fetch("https://strangers-things.herokuapp.com/api/2206-ftb-mt-web-ft/posts", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: "Bearer TOKEN_STRING_HERE",
-    },
-    body: JSON.stringify("I added this"),
-  });
-};
-
+  return (
+    <>
+      {posts.map((post, index) => {
+        console.log(posts);
+        return (
+          <h4 key={`Key: ${index}`} post={post}>
+            <div>{post.title}</div>
+            <div>{post.author.username}</div>
+            <div>{post.price}</div>
+            <div>{post.description}</div>
+            <div>{`Location: ${post.location}`}</div>
+            <div>
+              {post.willDeliver ? "Will deliver: Yes" : "Will deliver: No"}{" "}
+            </div>
+          </h4>
+        );
+      })}
+    </>
+  );
+}
 export default Posts;

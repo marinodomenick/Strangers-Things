@@ -11,6 +11,7 @@ function NavBar() {
       <NavLink to='/Login'> Login</NavLink> {/* testing NavLink instead of Nav for routes, still need to setup routes for NavBar*/}
       <Link to="/Logout">Logout</Link>
       <Link to="/Register">Sign Up!</Link>     
+      <Link to="/Posts">Posts</Link>
     </nav>
   );
 }

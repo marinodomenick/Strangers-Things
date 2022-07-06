@@ -1,9 +1,10 @@
 import { NavBar } from "components"
 import Register from "components/Register";
 import Login from "components/Login";
-import { useEffect, useState } from "react";
+import { React, useEffect, useState } from "react";
 import { fetchMe } from "api/auth";
 import { Posts } from "components";
+import { Route, Routes } from "react-router-dom";
 // import { Register } from "components"
 // // import { Router } from "react-router-dom"
 
@@ -43,9 +44,12 @@ export default function App() {
   return (
     <>
       <NavBar />
-      <Register setToken={setToken} />
-      <Login setToken={setToken} />
-      <Posts />
+      <Routes>
+      <Route path ="/" element = {<Posts setToken={setToken} /> } />
+      <Route path = "/Posts" element={<Posts/>} />
+      <Route path = "/Login" element = {<Login setToken={setToken} /> } />
+      <Route path = "/Register" element = {<Register setToken={setToken}/>} />
+      </Routes>
     </>
   );
 }

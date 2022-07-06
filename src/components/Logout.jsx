@@ -1,4 +1,3 @@
-// import React from 'react'
 import React from 'react'
 
 function Logout() {
@@ -14,7 +13,6 @@ export default Logout
 //   const [username, setUsername] = useState("");
 //   const log = () => {
 //     setUsername('')
-//     setUsername = username
 //     localStorage.removeItem('token')
 //     setToken('')
 //   }
