@@ -3,6 +3,7 @@ import Register from "components/Register";
 import Login from "components/Login";
 import { useEffect, useState } from "react";
 import { fetchMe } from "api/auth";
+import { Posts } from "components";
 // import { Register } from "components"
 // // import { Router } from "react-router-dom"
 
@@ -44,6 +45,7 @@ export default function App() {
       <NavBar />
       <Register setToken={setToken} />
       <Login setToken={setToken} />
+      <Posts />
     </>
   );
 }

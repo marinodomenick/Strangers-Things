@@ -13,7 +13,7 @@ export default Logout
 // const Logout = ({setToken}) => {
 //   const [username, setUsername] = useState("");
 //   const log = () => {
-//     setUsername('Guest')
+//     setUsername('')
 //     setUsername = username
 //     localStorage.removeItem('token')
 //     setToken('')

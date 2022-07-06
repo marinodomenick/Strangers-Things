@@ -1,8 +1,9 @@
 const url = "https://strangers-things.herokuapp.com/api/2206-ftb-mt-web-ft/";
 
 //Register User, imports to Register.jsx
+
 export const registerUser = async (username, password) => {
-  const response = await fetch(`${url}/register`, {
+  const response = await fetch(`${url}/users/register`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -18,9 +19,8 @@ export const registerUser = async (username, password) => {
   return result;
 };
 
-//Login Post
 export const loginUser = async (username, password) => {
-  const response = await fetch(`${url}/login`, {
+  const response = await fetch(`${url}/users/login`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -35,7 +35,6 @@ export const loginUser = async (username, password) => {
   const result = await response.json();
   return result;
 };
-
 //fetchme
 export const fetchMe = async (token) => {
   const response = await fetch(`${url}/users/me`, {
@@ -47,3 +46,5 @@ export const fetchMe = async (token) => {
   const result = await response.json();
   return result;
 };
+
+
