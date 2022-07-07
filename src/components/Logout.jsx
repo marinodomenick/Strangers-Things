@@ -1,31 +1,14 @@
-import React from 'react'
+const Logout = () => {
+  localStorage.removeItem('token')
 
-function Logout() {
-  return (
-    <div>Logout</div>
-  )
+
+return (
+  <button onClick={Logout}>
+  Logout
+</button>
+)
+
 }
+console.log("The local storage is showing" , localStorage)
 
 export default Logout
-// import {useState, React} from 'react'
-
-// const Logout = ({setToken}) => {
-//   const [username, setUsername] = useState("");
-//   const log = () => {
-//     setUsername('')
-//     localStorage.removeItem('token')
-//     setToken('')
-//   }
-
-// console.log("setUserName is currently showing:", setUsername)
-
-//   return (
-//     <div onClick={log}>Logout</div>
-//   )
-// }
-
-// console.log("setUserName is currently showing:", username)
-
-// export default Logout
-
-//------------------------------------------------------------------------------------------------Stopped in this file---------------------------------------------------------------------------------------------------------------------

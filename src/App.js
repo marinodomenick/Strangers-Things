@@ -7,6 +7,7 @@ import { Posts } from "components";
 import { Route, Routes } from "react-router-dom";
 import { Create } from "components";
 import { fetchPosts } from "./api/apiposts";
+import { Logout } from "components";
 
 
 
@@ -39,13 +40,24 @@ export default function App() {
   }, []);
 
   console.log("The current user is:", currentUser);
+  console.log("The local storage is showing" , localStorage)
 
   return (
     <>
+ 
+
       <NavBar />
+      {currentUser?.username ? (
+        <h3
+          style={{ color: "green" }}
+        >{`Logged in as: ${currentUser.username}`}</h3>
+      ) : (
+        <h3 style={{ color: "red" }}>"Please log in or register for access"</h3>
+      )}
       <Routes>
       <Route path ="/" element = {<Posts setToken={setToken} posts={posts} setPosts = {setPosts} /> } />
       {/* <Route path = "/Posts" element={<Posts/>} /> */}
+      <Route path = "/Logout" element={<Logout/>} />
       <Route path = "/Login" element = {<Login setToken={setToken} /> } />
       <Route path = "/Register" element = {<Register setToken={setToken}/>} />
       <Route path = "/Create" element = {<Create token = {token} posts={posts} setPosts = {setPosts} /> } />
