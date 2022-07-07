@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { fetchPosts } from "../api/apiposts";
+// import { fetchPosts } from "../api/apiposts";
 
-function Posts() {
-  const [posts, setPosts] = useState([]);
+function Posts({posts}) {
+  // const [posts, setPosts] = useState([]);
 
-  useEffect(() => {
-    const getAllPost = async () => {
-      const result = await fetchPosts();
-      setPosts(result.data.posts);
-    };
-    getAllPost();
-  }, []);
+  // useEffect(() => {
+  //   const getAllPost = async () => {
+  //     const result = await fetchPosts();
+  //     setPosts(result.data.posts);
+  //   };
+  //   getAllPost();
+  // }, []);
 
   return (
     <>
