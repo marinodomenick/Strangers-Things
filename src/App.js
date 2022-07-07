@@ -52,7 +52,7 @@ export default function App() {
           style={{ color: "green" }}
         >{`Logged in as: ${currentUser.username}`}</h3>
       ) : (
-        <h3 style={{ color: "red" }}>"Please log in or register for access"</h3>
+        <h3 style={{ color: "red" }}>!Please log in or register for access!</h3>
       )}
       <Routes>
       <Route path ="/" element = {<Posts setToken={setToken} posts={posts} setPosts = {setPosts} /> } />
