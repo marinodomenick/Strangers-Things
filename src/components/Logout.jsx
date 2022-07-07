@@ -1,13 +1,10 @@
+import react from "react"
+import { useNavigate } from "react-router-dom";
+
 const Logout = () => {
   localStorage.removeItem('token')
-
-
-return (
-  <button onClick={Logout}>
-  Logout
-</button>
-)
-
+  window.location.href = '/';
+  
 }
 console.log("The local storage is showing" , localStorage)
 
