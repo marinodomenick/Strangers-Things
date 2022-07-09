@@ -1,4 +1,4 @@
-import { NavBar } from "components"
+import { NavBar } from "components";
 import Register from "components/Register";
 import Login from "components/Login";
 import { React, useEffect, useState } from "react";
@@ -8,8 +8,7 @@ import { Route, Routes } from "react-router-dom";
 import { Create } from "components";
 import { fetchPosts } from "./api/apiposts";
 import { Logout } from "components";
-
-
+import { Messages } from "components";
 
 export default function App() {
   const [token, setToken] = useState("");
@@ -29,8 +28,6 @@ export default function App() {
     }
   }, [token]);
 
-  
-
   useEffect(() => {
     const getAllPost = async () => {
       const result = await fetchPosts();
@@ -40,12 +37,10 @@ export default function App() {
   }, []);
 
   console.log("The current user is:", currentUser);
-  console.log("The local storage is showing" , localStorage)
+  console.log("The local storage is showing", localStorage);
 
   return (
     <>
- 
-
       <NavBar />
       {currentUser?.username ? (
         <h3
@@ -55,12 +50,29 @@ export default function App() {
         <h3 style={{ color: "red" }}>!Please log in or register for access!</h3>
       )}
       <Routes>
-      <Route path ="/" element = {<Posts setToken={setToken} posts={posts} setPosts = {setPosts} /> } />
-      {/* <Route path = "/Posts" element={<Posts/>} /> */}
-      <Route path = "/Logout" element={<Logout/>} />
-      <Route path = "/Login" element = {<Login setToken={setToken} /> } />
-      <Route path = "/Register" element = {<Register setToken={setToken}/>} />
-      <Route path = "/Create" element = {<Create token = {token} posts={posts} setPosts = {setPosts} /> } />
+        <Route
+          path="/"
+          element={
+            <Posts
+              setToken={setToken}
+              posts={posts}
+              setPosts={setPosts}
+              currentUser={currentUser}
+              token={token}
+            />
+          }
+        />
+        <Route
+          path="/Messages"
+          element={<Messages currentUser={currentUser} posts={posts} />}
+        />
+        <Route path="/Logout" element={<Logout />} />
+        <Route path="/Login" element={<Login setToken={setToken} />} />
+        <Route path="/Register" element={<Register setToken={setToken} />} />
+        <Route
+          path="/Create"
+          element={<Create token={token} posts={posts} setPosts={setPosts} />}
+        />
       </Routes>
     </>
   );

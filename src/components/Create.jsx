@@ -17,7 +17,7 @@ function Create({ token, posts, setPosts }) {
         onSubmit={async (e) => {
           e.preventDefault();
           const result = await CreateNewPost(
-            { price, description, title, willDeliver },
+            { price, description, title, willDeliver, location },
             token
           );
           const newPosts = [...posts, result.data.post];
