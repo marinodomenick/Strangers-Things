@@ -9,6 +9,7 @@ import { Create } from "components";
 import { fetchPosts } from "./api/apiposts";
 import { Logout } from "components";
 import { Messages } from "components";
+import "./components/Strangers.css"
 
 export default function App() {
   const [token, setToken] = useState("");
@@ -36,18 +37,15 @@ export default function App() {
     getAllPost();
   }, []);
 
-  console.log("The current user is:", currentUser);
-  console.log("The local storage is showing", localStorage);
-
   return (
     <>
       <NavBar />
       {currentUser?.username ? (
-        <h3
-          style={{ color: "green" }}
+        <h3 className="header"
+          // style={{ color: "green" }}
         >{`Logged in as: ${currentUser.username}`}</h3>
       ) : (
-        <h3 style={{ color: "red" }}>!Please log in or register for access!</h3>
+        <h3 className="header" style={{ color: "red" }}>!Please log in or register for access!</h3>
       )}
       <Routes>
         <Route

@@ -1,0 +1,96 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    background-color: skyblue;
+}
+
+.Navi {
+    display: flex;
+    justify-content: space-around;
+    background-color: #333;
+    overflow: hidden;
+      
+}
+
+.Navi a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.Logout {
+    background-color: blue;
+}
+
+.Navi a:hover {
+    background-color: green;
+}
+
+.thebacon {
+    display: grid;
+    place-content: center;
+    justify-items: center;
+    margin: 0;
+    padding: 1rem;
+    line-height: 1.5;
+}
+
+section {
+    border: solid;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 5px;
+    width: 500px;
+    grid-template-columns: 1fr 1fr;
+    background-color: #74afdf;
+
+    
+}
+
+h3 {
+    display: flex;
+    color: green;
+    justify-content: center;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+}
+h4 {
+    display:flex;
+    justify-content: center;
+}
+.login {
+    display:flex;
+    align-self: center;
+}
+
+.loginbox {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.createbox {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info-header {
+    font-weight: bold;    
+}
+
+select {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 55px;
+}
+

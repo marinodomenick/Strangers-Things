@@ -9,7 +9,7 @@ export default function Register({ setToken }) {
   return (
     <div>
       <h4>Register:</h4>
-      <form
+      <form className="loginbox"
         onSubmit={async (e) => {
           e.preventDefault();
           const result = await registerUser(username, password);
@@ -19,18 +19,18 @@ export default function Register({ setToken }) {
           setUsername("");
         }}
       >
-        <input
+        <input className="login"
           value={username}
           placeholder="username"
           onChange={(e) => setUsername(e.target.value)}
         />
-        <input
+        <input className="login"
           value={password}
           placeholder="password"
           type="password"
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="submit">Submit!</button>
+        <button className="login" type="submit">Submit!</button>
       </form>
     </div>
   );
