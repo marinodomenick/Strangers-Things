@@ -18,7 +18,7 @@ function Create({ token, posts, setPosts }) {
           <form
             className="createbox"
             onSubmit={async (e) => {
-              e.preventDefault();
+              window.location.href = '/'; 
               const result = await CreateNewPost(
                 { price, description, title, willDeliver, location },
                 token
